@@ -10,10 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var isActive = true
-    var player = 1 // 1 = x; 2 = o;
-    var board = [0,0,0,0,0,0,0,0,0]
-    let temp = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]]
+    var board: Board = Board()
+    var currentState: GameState = .PLAYING
+    var currentPlayer: Seed = .CROSS
     
     @IBOutlet weak var xWins: UILabel!
     @IBOutlet weak var oWins: UILabel!
@@ -27,8 +26,8 @@ class ViewController: UIViewController {
     
     
     @IBAction func playAgain(sender: AnyObject) {
-        board = [0,0,0,0,0,0,0,0,0]
-        player = 1
+        board = Board()
+        currentPlayer = .CROSS
         
         var clear : UIButton
         for i in 0...8 {
@@ -37,60 +36,56 @@ class ViewController: UIViewController {
             
         }
         gameOver.hidden = true
-        isActive = true
+        currentState = .PLAYING
     }
     
     // moves the player when spot is clicked and updates label
     @IBAction func move(sender: AnyObject) {
-        if board[sender.tag] == 0 && isActive{
+        if board.getMove(sender.tag) == .EMPTY && currentState == .PLAYING{
             
-            board[sender.tag] = player
+            board.move(sender.tag, seed: currentPlayer)
             
-            if player == 1 {
+            if currentPlayer == .CROSS {
                 sender.setImage(UIImage(named: "X.png"), forState: .Normal)
-                player = 2
                 topLabel.text = "Player 2 move"
             } else {
                 sender.setImage(UIImage(named: "O.png"), forState: .Normal)
-                player = 1
                 topLabel.text = "Player 1 move"
             }
+            
             if (isWin() || isDraw()) {
-                isActive = false
                 xWins.text = "X : \(xCount)"
                 oWins.text = "O : \(oCount)"
                 gameOver.hidden = false
+            } else {
+                currentPlayer = (currentPlayer == .NOUGHT) ? .CROSS : .NOUGHT
             }
         }
     }
     
+    
+    
     // determins if there's a win and updates label
     func isWin() -> Bool {
-        for wins in temp {
-            
-            if (board[wins[0]] != 0 &&
-                board[wins[0]] == board[wins[1]] &&
-                board[wins[1]] == board[wins[2]])
-            {
-                if (board[wins[0]] == 1){
-                    topLabel.text = "PLAYER 1 WINS!"
-                    xCount += 1
-                } else {
-                    topLabel.text = "PLAYER 2 WINS!"
-                    oCount += 1
-                }
-                return true
-            }
+        if (!board.isWin(currentPlayer)){
+            return false
         }
-        return false
+        if (currentPlayer == .NOUGHT){
+                topLabel.text = "PLAYER 1 WINS!"
+                xCount += 1
+                currentState = .NOUGHT_WON
+        } else {
+                topLabel.text = "PLAYER 2 WINS!"
+                oCount += 1
+                currentState = .CROSS_WON
+        }
+        return true
     }
     
     // determines if there's a draw and updates label
     func isDraw() -> Bool {
-        for i in 0...8 {
-            if board[i] == 0 {
-                return false
-            }
+        if (!board.isDraw()){
+            return false
         }
         topLabel.text = "ITS A DRAW!"
         return true
@@ -111,4 +106,3 @@ class ViewController: UIViewController {
 
 
 }
-
