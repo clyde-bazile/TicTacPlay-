@@ -62,11 +62,14 @@ public class AIPlayer{
         return minimax(depth, player: mySeed, alpha: Int.min, beta: Int.max)[1]
     }
     
-    func minimax(depth: Int, player: Seed, var alpha: Int, var beta: Int) -> [Int] {
+    func minimax(depth: Int, player: Seed, alpha: Int, beta: Int) -> [Int] {
         let options = board.allMoves()
         
         var score: Int = eval()
         var bestMove: Int = -1
+        
+        var tempAlpha = alpha
+        var tempBeta = beta
         
         if (board.terminal() || depth == 0){
             return [score, bestMove]
@@ -74,22 +77,22 @@ public class AIPlayer{
             for i in options {
                 board.move(i, seed: player)
                 if (player == mySeed){
-                    score = minimax(depth - 1, player: oppSeed, alpha: alpha, beta: beta)[0]
-                    if (score > alpha){
-                        alpha = score
+                    score = minimax(depth - 1, player: oppSeed, alpha: tempAlpha, beta: tempBeta)[0]
+                    if (score > tempAlpha){
+                        tempAlpha = score
                         bestMove = i
                     }
                 } else {
-                    score = minimax(depth - 1, player: mySeed, alpha: alpha, beta: beta)[0]
-                    if (score < beta){
-                        beta = score
+                    score = minimax(depth - 1, player: mySeed, alpha: tempAlpha, beta: tempBeta)[0]
+                    if (score < tempBeta){
+                        tempBeta = score
                         bestMove = i
                     }
                 }
                 board.move(i, seed: .EMPTY)
-                if (alpha >= beta) { break }
+                if (tempAlpha >= tempBeta) { break }
             }
-            return [(player == mySeed) ? alpha : beta, bestMove]
+            return [(player == mySeed) ? tempAlpha : tempBeta, bestMove]
         }
     }
     
