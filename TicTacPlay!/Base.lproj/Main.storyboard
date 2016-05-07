@@ -200,6 +200,19 @@
                                     <action selector="playerSettings:" destination="BYZ-38-t0r" eventType="valueChanged" id="FvK-d7-7jO"/>
                                 </connections>
                             </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iHZ-zT-EFt">
+                                <rect key="frame" x="558" y="28" width="22" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="22" id="98T-vD-TzF"/>
+                                    <constraint firstAttribute="height" constant="22" id="kTl-Yr-U2T"/>
+                                </constraints>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <segue destination="srv-0B-N2f" kind="popoverPresentation" popoverAnchorView="iHZ-zT-EFt" id="nB0-QZ-1d2">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -223,6 +236,7 @@
                             <constraint firstItem="abg-9a-pqK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="91" id="RDc-cT-oPM"/>
                             <constraint firstItem="abg-9a-pqK" firstAttribute="top" secondItem="eMw-0D-BYG" secondAttribute="bottom" constant="48" id="S3p-77-awT"/>
                             <constraint firstItem="jag-su-KwG" firstAttribute="top" secondItem="eMw-0D-BYG" secondAttribute="bottom" constant="8" id="Xrk-r3-Ir8"/>
+                            <constraint firstItem="iHZ-zT-EFt" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="Yip-W9-9CS"/>
                             <constraint firstItem="gnW-wp-3De" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-88" id="ZQb-by-pKq"/>
                             <constraint firstItem="eMw-0D-BYG" firstAttribute="leading" secondItem="LI0-A9-qDv" secondAttribute="trailing" constant="-97" id="ZQe-CW-DuS"/>
                             <constraint firstItem="QAK-LQ-Wzg" firstAttribute="top" secondItem="eMw-0D-BYG" secondAttribute="bottom" constant="-189" id="bpo-fg-Aje"/>
@@ -239,6 +253,7 @@
                             <constraint firstItem="Ddp-Yf-uh7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="udF-Gm-esE"/>
                             <constraint firstItem="eMw-0D-BYG" firstAttribute="top" secondItem="xQc-rk-vZm" secondAttribute="bottom" constant="-99" id="wUT-O4-s63"/>
                             <constraint firstItem="eMw-0D-BYG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xrs-MX-ZRa"/>
+                            <constraint firstItem="iHZ-zT-EFt" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="xvw-0x-kmR"/>
                             <constraint firstItem="jag-su-KwG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xw0-Mk-htN"/>
                             <constraint firstItem="HNh-Or-Yx4" firstAttribute="top" secondItem="eMw-0D-BYG" secondAttribute="bottom" constant="-98" id="ygL-83-Hro"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="q6H-Pc-pxf" secondAttribute="bottom" id="yyO-lj-sBy"/>
@@ -265,6 +280,89 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="349" y="549"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="B2N-VS-UxL">
+            <objects>
+                <viewController id="srv-0B-N2f" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bKy-Ms-clr"/>
+                        <viewControllerLayoutGuide type="bottom" id="161-Ml-wy4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="apR-vz-FlF">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background.png" translatesAutoresizingMaskIntoConstraints="NO" id="8yW-Kl-vZb">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z1l-cu-oZd">
+                                <rect key="frame" x="263" y="550" width="75" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="OD3-Un-M8v"/>
+                                    <constraint firstAttribute="width" constant="75" id="RHd-Sn-jd7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
+                                <state key="normal" title="Play Now!">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" id="ATM-bT-Kzk"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="QKe-fZ-8V6">
+                                <rect key="frame" x="190" y="28" width="220" height="61"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How to Play" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OqV-qN-4lw">
+                                        <rect key="frame" x="0.0" y="0.0" width="220" height="61"/>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="220" id="25W-yf-WDr"/>
+                                            <constraint firstAttribute="height" constant="61" id="NqF-rK-WzN"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="27"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="highlightedColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="49" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mbP-b3-0Gu">
+                                <rect key="frame" x="20" y="73" width="560" height="454"/>
+                                <mutableString key="text">Settings can not be adjusted once the game has started. No cheating! 
+
+Adjust the computer difficulty using the menu at the bottom of the screen. Set to 'off' to play against a human. 
+
+Crosses always goes first. Select who will be crosses using the settings at the top of the screen.
+
+If the computer difficutly is set to 'off' the computer will not play regardless of the settings above
+
+CAUTION: Settings from the previous game will automatically roll over once a new game starts. This means if the computer is set to go first, then it will immediately make its first move.</mutableString>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mbP-b3-0Gu" firstAttribute="leading" secondItem="apR-vz-FlF" secondAttribute="leadingMargin" id="2pv-sG-NOP"/>
+                            <constraint firstItem="mbP-b3-0Gu" firstAttribute="centerX" secondItem="apR-vz-FlF" secondAttribute="centerX" id="7S0-X9-LY3"/>
+                            <constraint firstItem="161-Ml-wy4" firstAttribute="top" secondItem="8yW-Kl-vZb" secondAttribute="bottom" id="FuV-El-Aby"/>
+                            <constraint firstItem="mbP-b3-0Gu" firstAttribute="centerY" secondItem="apR-vz-FlF" secondAttribute="centerY" id="KZr-iu-ldA"/>
+                            <constraint firstItem="QKe-fZ-8V6" firstAttribute="centerX" secondItem="apR-vz-FlF" secondAttribute="centerX" id="MNY-4u-BzW"/>
+                            <constraint firstItem="Z1l-cu-oZd" firstAttribute="centerX" secondItem="apR-vz-FlF" secondAttribute="centerX" id="NC4-AT-pNY"/>
+                            <constraint firstItem="8yW-Kl-vZb" firstAttribute="leading" secondItem="apR-vz-FlF" secondAttribute="leadingMargin" constant="-20" id="ZMi-bi-23k"/>
+                            <constraint firstItem="Z1l-cu-oZd" firstAttribute="top" secondItem="mbP-b3-0Gu" secondAttribute="bottom" constant="23" id="cqx-QF-Lbc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8yW-Kl-vZb" secondAttribute="trailing" constant="-20" id="g6F-b0-PwX"/>
+                            <constraint firstItem="8yW-Kl-vZb" firstAttribute="top" secondItem="apR-vz-FlF" secondAttribute="topMargin" id="hup-aB-qyg"/>
+                            <constraint firstItem="QKe-fZ-8V6" firstAttribute="top" secondItem="bKy-Ms-clr" secondAttribute="bottom" constant="8" id="iGr-x0-JlR"/>
+                            <constraint firstItem="mbP-b3-0Gu" firstAttribute="top" secondItem="bKy-Ms-clr" secondAttribute="bottom" constant="53" id="pVv-en-j1Z"/>
+                            <constraint firstItem="mbP-b3-0Gu" firstAttribute="trailing" secondItem="apR-vz-FlF" secondAttribute="trailingMargin" id="zRj-3a-ifF"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dyy-V3-w4T" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="971" y="944"/>
         </scene>
     </scenes>
     <resources>
