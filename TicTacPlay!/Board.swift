@@ -42,4 +42,33 @@ public class Board {
     func getMove(cell: Int) -> Seed{
         return board[cell]
     }
+
+    func terminal() -> Bool {
+        return ( isDraw() ||
+            isWin(.NOUGHT) ||
+            isWin(.CROSS) )
+    }
+
+    func allMoves() -> [Int] {
+        var moves = [Int]()
+        
+        if (!self.terminal() ){
+            for i in 0...8 {
+                if (board[i] == .EMPTY){
+                    moves.append(i)
+                }
+            }
+        }
+        
+        return moves
+    }
+    
+    func isEmpty() -> Bool {
+        for i in 0...8{
+            if (board[i] != Seed.EMPTY) {
+                return false
+            }
+        }
+        return true
+    }
 }

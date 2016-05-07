@@ -172,6 +172,19 @@
                                     <action selector="playAgain:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cTQ-n7-HRM"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" tag="30" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="i0M-6Y-uRB">
+                                <rect key="frame" x="20" y="552" width="560" height="29"/>
+                                <segments>
+                                    <segment title="Off "/>
+                                    <segment title="Easy"/>
+                                    <segment title="Medium"/>
+                                    <segment title="Hard"/>
+                                </segments>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="depth:" destination="BYZ-38-t0r" eventType="valueChanged" id="BTJ-Bb-Xxq"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -182,6 +195,7 @@
                             <constraint firstItem="TP5-ds-Gpc" firstAttribute="leading" secondItem="eMw-0D-BYG" secondAttribute="trailing" constant="-94" id="6pt-8X-7Wo"/>
                             <constraint firstItem="ypE-rP-biA" firstAttribute="leading" secondItem="eMw-0D-BYG" secondAttribute="trailing" constant="-185" id="6xd-AN-MMA"/>
                             <constraint firstItem="3h6-5R-me0" firstAttribute="top" secondItem="eMw-0D-BYG" secondAttribute="bottom" constant="-178" id="7ew-lK-wbc"/>
+                            <constraint firstItem="i0M-6Y-uRB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="9Qu-0m-Bxj"/>
                             <constraint firstItem="eMw-0D-BYG" firstAttribute="leading" secondItem="QAK-LQ-Wzg" secondAttribute="trailing" constant="-97" id="9gF-8y-sgK"/>
                             <constraint firstItem="w7Q-qa-F3M" firstAttribute="leading" secondItem="eMw-0D-BYG" secondAttribute="trailing" constant="-185" id="D0E-7F-1eG"/>
                             <constraint firstItem="z3L-Sc-ieN" firstAttribute="top" secondItem="eMw-0D-BYG" secondAttribute="bottom" constant="-98" id="DcO-rP-qxv"/>
@@ -200,7 +214,9 @@
                             <constraint firstItem="3h6-5R-me0" firstAttribute="leading" secondItem="eMw-0D-BYG" secondAttribute="trailing" constant="-237" id="f6g-aG-5kg"/>
                             <constraint firstItem="rag-CR-7At" firstAttribute="top" secondItem="eMw-0D-BYG" secondAttribute="bottom" constant="-189" id="frf-d8-8ie"/>
                             <constraint firstItem="eMw-0D-BYG" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="gaD-0t-6wX"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="i0M-6Y-uRB" secondAttribute="bottom" constant="20" id="gkO-y9-0Zd"/>
                             <constraint firstItem="q6H-Pc-pxf" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="hUe-aY-BiL"/>
+                            <constraint firstItem="i0M-6Y-uRB" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="nKi-qv-GJS"/>
                             <constraint firstItem="HNh-Or-Yx4" firstAttribute="leading" secondItem="eMw-0D-BYG" secondAttribute="trailing" constant="-185" id="r5s-we-6zW"/>
                             <constraint firstItem="eMw-0D-BYG" firstAttribute="top" secondItem="ypE-rP-biA" secondAttribute="bottom" constant="-99" id="sra-7Z-p44"/>
                             <constraint firstItem="Ddp-Yf-uh7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="udF-Gm-esE"/>
@@ -212,6 +228,16 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="AISetting" destination="i0M-6Y-uRB" id="TXc-Xi-aCE"/>
+                        <outlet property="cell1" destination="xQc-rk-vZm" id="J5P-Oc-RkZ"/>
+                        <outlet property="cell2" destination="ypE-rP-biA" id="cDJ-o9-eHg"/>
+                        <outlet property="cell3" destination="TP5-ds-Gpc" id="i6c-xE-b3e"/>
+                        <outlet property="cell4" destination="QAK-LQ-Wzg" id="KDQ-U4-tmc"/>
+                        <outlet property="cell5" destination="w7Q-qa-F3M" id="MNp-M4-PIA"/>
+                        <outlet property="cell6" destination="rag-CR-7At" id="b58-dj-RrB"/>
+                        <outlet property="cell7" destination="LI0-A9-qDv" id="vMw-av-S53"/>
+                        <outlet property="cell8" destination="HNh-Or-Yx4" id="ekG-xg-kaa"/>
+                        <outlet property="cell9" destination="z3L-Sc-ieN" id="NWh-Uh-otZ"/>
                         <outlet property="gameOver" destination="3h6-5R-me0" id="ZOz-d8-Yu2"/>
                         <outlet property="oWins" destination="abg-9a-pqK" id="cxw-qZ-kqH"/>
                         <outlet property="topLabel" destination="Ddp-Yf-uh7" id="FiK-Po-kdd"/>

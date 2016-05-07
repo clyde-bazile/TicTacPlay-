@@ -17,6 +17,7 @@
 		69CFDD911CDD3FA00022D1B5 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CFDD8E1CDD3FA00022D1B5 /* Board.swift */; };
 		69CFDD931CDD3FA00022D1B5 /* Seed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CFDD901CDD3FA00022D1B5 /* Seed.swift */; };
 		69CFDD951CDD40100022D1B5 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CFDD941CDD40100022D1B5 /* GameState.swift */; };
+		69EAF3D71CDDB53200C4CE6C /* AIPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EAF3D61CDDB53200C4CE6C /* AIPlayer.swift */; };
 		69FAE3141CAF12DA000D8462 /* O.png in Resources */ = {isa = PBXBuildFile; fileRef = 69FAE3131CAF12DA000D8462 /* O.png */; };
 		69FAE3161CAF155E000D8462 /* X.png in Resources */ = {isa = PBXBuildFile; fileRef = 69FAE3151CAF155E000D8462 /* X.png */; };
 /* End PBXBuildFile section */
@@ -34,6 +35,7 @@
 		69CFDD8E1CDD3FA00022D1B5 /* Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 		69CFDD901CDD3FA00022D1B5 /* Seed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Seed.swift; sourceTree = "<group>"; };
 		69CFDD941CDD40100022D1B5 /* GameState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
+		69EAF3D61CDDB53200C4CE6C /* AIPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AIPlayer.swift; sourceTree = "<group>"; };
 		69FAE3131CAF12DA000D8462 /* O.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = O.png; sourceTree = "<group>"; };
 		69FAE3151CAF155E000D8462 /* X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = X.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -69,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				6962C83F1CAB7DCD0023BA76 /* AppDelegate.swift */,
+				69EAF3D61CDDB53200C4CE6C /* AIPlayer.swift */,
 				6962C8411CAB7DCD0023BA76 /* ViewController.swift */,
 				69CFDD941CDD40100022D1B5 /* GameState.swift */,
 				69CFDD8E1CDD3FA00022D1B5 /* Board.swift */,
@@ -164,6 +167,7 @@
 				6962C8401CAB7DCD0023BA76 /* AppDelegate.swift in Sources */,
 				69CFDD951CDD40100022D1B5 /* GameState.swift in Sources */,
 				69CFDD931CDD3FA00022D1B5 /* Seed.swift in Sources */,
+				69EAF3D71CDDB53200C4CE6C /* AIPlayer.swift in Sources */,
 				69CFDD911CDD3FA00022D1B5 /* Board.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
