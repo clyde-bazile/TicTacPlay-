@@ -328,7 +328,7 @@
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="49" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mbP-b3-0Gu">
                                 <rect key="frame" x="20" y="73" width="560" height="454"/>
-                                <mutableString key="text">Settings can not be adjusted once the game has started. No cheating! 
+                                <string key="text">Settings can not be adjusted once the game has started. No cheating! 
 
 Adjust the computer difficulty using the menu at the bottom of the screen. Set to 'off' to play against a human. 
 
@@ -336,7 +336,7 @@ Crosses always goes first. Select who will be crosses using the settings at the 
 
 If the computer difficutly is set to 'off' the computer will not play regardless of the settings above
 
-CAUTION: Settings from the previous game will automatically roll over once a new game starts. This means if the computer is set to go first, then it will immediately make its first move.</mutableString>
+CAUTION: Settings from the previous game will automatically roll over once a new game starts. This means if the computer is set to go first, then it will immediately make its first move.</string>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
