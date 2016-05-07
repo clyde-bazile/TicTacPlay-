@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     var currentPlayer: Seed = .CROSS
     var depth = 0
     
+    @IBOutlet weak var playerOne: UISegmentedControl!
     @IBOutlet weak var AISetting: UISegmentedControl!
     @IBOutlet weak var xWins: UILabel!
     @IBOutlet weak var oWins: UILabel!
@@ -49,6 +50,13 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func playerSettings(sender: AnyObject) {
+        if (board.isEmpty()) {
+            if (playerOne.selectedSegmentIndex == 1){
+                aiMove()
+            }
+        }
+    }
     @IBAction func playAgain(sender: AnyObject) {
         board = Board()
         currentPlayer = .CROSS
@@ -63,12 +71,13 @@ class ViewController: UIViewController {
         gameOver.hidden = true
         currentState = .PLAYING
         depth(AISetting)
+        playerSettings(playerOne)
     }
     
-    // moves the player when spot is clicked and updates label
     @IBAction func move(sender: AnyObject) {
         if (board.isEmpty()){
             AISetting.enabled = false
+            playerOne.enabled = false
         }
         
         if board.getMove(sender.tag) == .EMPTY &&
@@ -92,9 +101,15 @@ class ViewController: UIViewController {
                 currentPlayer = (currentPlayer == .NOUGHT) ? .CROSS : .NOUGHT
             }
         }
-        
-        // moves for AI if applicable
+        aiMove()
+    }
+    
+    func aiMove(){
         if (depth > 0 && currentState == .PLAYING) {
+            if (board.isEmpty()){
+                AISetting.enabled = false
+                playerOne.enabled = false
+            }
             let ai = AIPlayer(board: board, seed: currentPlayer, depth: depth)
             let move = ai.move()
             if (move != -1) {
@@ -208,6 +223,7 @@ class ViewController: UIViewController {
                 currentState = .NOUGHT_WON
         }
         AISetting.enabled = true
+        playerOne.enabled = true
         return true
     }
     
@@ -219,6 +235,7 @@ class ViewController: UIViewController {
         topLabel.text = "ITS A DRAW!"
         currentState == .DRAW
         AISetting.enabled = true
+        playerOne.enabled = true
         return true
     }
     
